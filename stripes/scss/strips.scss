@@ -1,0 +1,203 @@
+$StripColor_1: #244F75;
+$StripColor_2: #60BFBF;
+$StripColor_3: #8C4B7E;
+$StripColor_4: #F8BB44;
+$StripColor_5: #F24B4B;
+
+@mixin strip($StripBKG, $left){
+  background: $StripBKG;
+  left: $left;
+  position: absolute;
+  width: 20%;
+  min-height: 100vh;
+  overflow: hidden;
+  cursor: pointer;
+
+}
+
+@mixin stripBefore{
+
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  opacity: 0.05;
+  -webkit-transform: skew(30deg) scaleY(1) translate(0, 0);
+          transform: skew(30deg) scaleY(1) translate(0, 0);
+
+
+
+}
+
+@mixin stripHover{
+
+  -webkit-transform: skew(0deg) scale(3) translate(0, 0);
+      transform: skew(0deg) scale(3) translate(0, 0);
+      opacity: 0.1;
+
+
+}
+
+
+.strips {
+  min-height: 100vh;
+  text-align: left;
+  overflow: hidden;
+  color: black;
+  
+
+}
+
+.strips_strip_1 {
+  @include strip($StripColor_1, 0);
+  &:before{
+    @include stripBefore;
+  }
+  &:hover{
+    &:before{
+      @include stripHover;
+    }
+  }
+  animation: strip1 0.3s;
+  
+}
+
+.strips_strip_2 {
+  @include strip($StripColor_2, 20%);
+  &:before{
+    @include stripBefore;
+  }
+  &:hover{
+    &:before{
+      @include stripHover;
+    }
+  }
+
+  animation: strip2 0.35s;
+  
+}
+
+.strips_strip_3 {
+  @include strip($StripColor_3, 40%);
+  &:before{
+    @include stripBefore;
+  }
+  &:hover{
+    &:before{
+      @include stripHover;
+    }
+  }
+  animation: strip3 0.4s;
+  
+}
+
+.strips_strip_4 {
+  @include strip($StripColor_4, 60%);
+  &:before{
+    @include stripBefore;
+  }
+  &:hover{
+    &:before{
+      @include stripHover;
+    }
+  }
+  animation: strip4 0.45s;
+}
+
+.strips_strip_5 {
+  @include strip($StripColor_5, 80%);
+  &:before{
+    @include stripBefore;
+  }
+  &:hover{
+    &:before{
+      @include stripHover;
+    }
+  }
+  animation: strip5 0.5s;
+
+}
+
+.strip_title {
+  display: block;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  font-size: 3.5vw;
+  color: white;
+}
+
+.strip_content {
+  margin:0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform:translateY(-50%);
+  transform:translateY(-50%);
+  -ms-transform:translateX(-50%);
+  transform:translateX(-50%);
+}
+
+
+@keyframes strip1 {
+  0% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes strip2 {
+  0% {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes strip3 {
+  0% {
+    -webkit-transform: translate3d(0, -100%, 0);
+            transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes strip4 {
+  0% {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes strip5 {
+  0% {
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
+
+

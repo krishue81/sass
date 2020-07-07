@@ -1,0 +1,33 @@
+@import "strips";
+
+
+body {
+    font-family: 'Lato', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
+    line-height: 1.5;
+  }
+  
+  h1 {
+    font-weight: 300;
+  }
+
+  h2 {
+    font-weight: 300;
+    font-size: 36px;
+    margin: 0 0 16px;
+  }
+  
+  .fa {
+    font-size: 30px;
+    color: white;
+  }
+  
+  p {
+   margin: 0 0 16px;
+  }
+
+
+
+
+
